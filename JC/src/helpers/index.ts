@@ -65,7 +65,7 @@ export const handleGetPositions = async (): Promise<PositionsProps[]> => {
 
 //SUBMIT DE POSTULACION
 export const handleSubmit = async (data: Apply) => {
-  const request = await fetch(`${baseUrl}/api/apply`, {
+  const request = await fetch(`${baseUrl}/api/candidate/apply-to-job`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -80,6 +80,7 @@ export const handleSubmit = async (data: Apply) => {
   const response = await request.json();
   if (response.ok === false) throw new Error("ocurrio un error al postular");
   if (response.ok === true) {
+    console.log(response);
     console.log("postulacion exitosa");
   }
 };

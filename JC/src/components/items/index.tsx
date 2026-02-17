@@ -21,8 +21,9 @@ export const Items: React.FC<ItemProps> = ({ id, title, candidate }) => {
         jobId: id,
         candidateId: candidate.candidateId,
         repoUrl: repoUrl,
-      };
-     await handleSubmit(apply);
+        applicationId: candidate.applicationId,
+      };      
+     handleSubmit(apply);
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error(error);

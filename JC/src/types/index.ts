@@ -36,6 +36,7 @@ export interface Apply {
   jobId: string;
   candidateId: string;
   repoUrl: string;
+  applicationId: string;
 }
 
 export interface Errors {
